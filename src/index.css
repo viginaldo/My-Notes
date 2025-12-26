@@ -7,7 +7,62 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#root {
+  min-height: 100vh;
+}
+
+.note-editor {
+  width: 100%;
+  min-height: 400px;
+  border: none;
+  outline: none;
+  padding: 15px;
+  font-size: 16px;
+  line-height: 1.6;
+  resize: none;
+  background: transparent;
+}
+
+.effect-section {
+  margin: 20px 0;
+}
+
+.size-buttons, .color-buttons, .style-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.size-button, .style-buttons button {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.size-button.active {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+.color-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.color-button:hover {
+  transform: scale(1.1);
+}
+
+.style-buttons button:hover {
+  background: #667eea;
+  color: white;
 }
