@@ -4,19 +4,26 @@ import NoteEditor from './components/NoteEditor';
 import BackgroundPicker from './components/BackgroundPicker';
 import TextEffects from './components/TextEffects';
 import ShareExport from './components/ShareExport';
-import { FaPalette, FaFont, FaMagic, FaShareAlt, FaDownload } from 'react-icons/fa';
+import { 
+  FaPalette, 
+  FaFont, 
+  FaMagic, 
+  FaShareAlt, 
+  FaDownload,
+  FaTimes
+} from 'react-icons/fa';
 import './App.css';
 
 function App() {
   const [activeTool, setActiveTool] = useState(null);
   const [noteContent, setNoteContent] = useState('');
   const [textStyle, setTextStyle] = useState({
-    fontSize: '16px',
+    fontSize: '20px', // Aumentado para melhor visualização mobile
     fontWeight: 'normal',
     color: '#000000',
-    fontFamily: 'Arial',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     lineHeight: '1.6',
-    textAlign: 'left',
+    textAlign: 'center',
     backgroundColor: '#ffffff'
   });
   const noteRef = useRef(null);
@@ -45,7 +52,7 @@ function App() {
     <div className="app">
       <div className="header">
         <h1>Notepad Pro</h1>
-        <div className="subtitle">Create & Share Notes</div>
+        <div className="subtitle">Create & Share Beautiful Notes</div>
       </div>
       
       <div className="note-container" ref={noteRef}>
@@ -127,6 +134,7 @@ function App() {
           noteContent={noteContent}
           textStyle={textStyle}
           activeTool={activeTool}
+          onClose={() => setActiveTool(null)}
         />
       )}
     </div>
